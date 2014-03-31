@@ -15,12 +15,16 @@
   <script src="http://localhost/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
 
+  <script src="/components/libs/zepto.js"></script>
+
   <script src="/javascripts/application.js"></script>
 </head>
 <body>
-<a href="#" class="btn large" onclick="playAudio('http://translate.google.com/translate_tts?tl=fi&q=' + encodeURIComponent('seitsemän'));">Play Audio</a>
-        <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
+<a href="#" class="btn large" onclick="playNumber();">Play Audio</a>
+<!--        <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
         <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
-        <p id="audio_position"></p>
+        <p id="audio_position"></p>-->
+
+<div class="log"></div>
 </body>
 </html>

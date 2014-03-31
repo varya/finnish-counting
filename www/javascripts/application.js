@@ -1,11 +1,24 @@
-
 steroids.view.navigationBar.show("Finnish Counting");
 
-document.addEventListener("deviceready", onDeviceReady, false);
+var range = [1, 19];
+
+var getNumber = function() {
+    return Math.round(Math.random() * (range[1] - range[0]) + range[0]);
+}
+
+//document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    playAudio("http://translate.google.com/translate_tts?tl=fi&q=" + encodeURIComponent("seitsemän"));
+    playAudio("http://translate.google.com/translate_tts?tl=fi&q=" + getNumber());
+
 }
+
+var playNumber = function() {
+    var number = getNumber();
+    playAudio("http://translate.google.com/translate_tts?tl=fi&q=" + number);
+    $('.log').text(number);
+}
+
 // Audio player
         //
         var my_media = null;
