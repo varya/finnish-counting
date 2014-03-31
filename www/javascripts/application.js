@@ -18,20 +18,41 @@ var getSet = function() {
     return res;
 
 }
-$(function(){
+
+var refresh = function() {
+
     var numbers = getSet();
+
+    var html = [];
+    for (var i = 0; i < numbers.length; i++) {
+        html.push('<li class="numbers-list__item" data-value="' + numbers[i] + '">' +
+            '<div class="number">' +
+            numbers[i] +
+            '</div>' +
+            '</li> ');
+    }
+
+    for(var i = 0; i < 10; i++) {
+        html.push('<li class="numbers-list__sizer"></li>');
+    }
+
+    $('.numbers-list').html(html.join(''));
+
+}
+
+$(function(){
 
     $('.numbers-list').on('click', '.numbers-list__item', function(e){
         var number = $(e.currentTarget).attr('data-value');
         playNumber(number);
     });
 
-    var html = [];
-    for (var i = 0; i < numbers.length; i++) {
-        html.push('<li class="numbers-list__item" data-value="' + numbers[i] + '">' + numbers[i] + '</li>');
-    }
+    $('.again').on('click', function(){
+        refresh();
+    });
 
-    $('.numbers-list').html(html.join(''));
+    refresh();
+
 });
 
 

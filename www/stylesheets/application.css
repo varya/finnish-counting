@@ -7,6 +7,53 @@ input, textarea, [contenteditable] * {
   -webkit-user-select: auto;  /* Allow selection for input elements and those with contenteditable attribute */
 }
 
+body {
+    font: 0/0 a;
+    text-align: center;
+}
+
 .content-padded {
   padding: 10px;
+}
+
+.numbers-list
+{
+    margin: 20px 0;
+    padding: 0;
+
+    list-style: none;
+    text-align: justify;
+}
+
+.numbers-list__item
+{
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.numbers-list__sizer
+{
+    display: inline-block;
+    width: 33%;
+}
+
+.number
+{
+    padding: 10px;
+    margin: 15px 10px;
+    background: yellow;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    font-family: Verdana;
+}
+
+.again
+{
+    background: pink;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: Verdana;
+    padding: 5px;
 }
