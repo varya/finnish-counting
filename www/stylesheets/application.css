@@ -57,3 +57,11 @@ body {
     font-family: Verdana;
     padding: 5px;
 }
+
+.about
+{
+    font-family: Verdana;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.25em;
+}
