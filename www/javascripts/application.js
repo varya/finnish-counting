@@ -1,20 +1,43 @@
 steroids.view.navigationBar.show("Finnish Counting");
 
-var range = [1, 19];
+var range = [1, 999];
 
 var getNumber = function() {
     return Math.round(Math.random() * (range[1] - range[0]) + range[0]);
 }
 
-//document.addEventListener("deviceready", onDeviceReady, false);
+var getSet = function() {
 
-function onDeviceReady() {
-    playAudio("http://translate.google.com/translate_tts?tl=fi&q=" + getNumber());
+    var res = [], len = 0;
+    while (len < 6) {
+        var rand = getNumber();
+        if (res.indexOf(rand) > -1) continue;
+        res.push(rand);
+        len++;
+    }
+    return res;
 
 }
+$(function(){
+    var numbers = getSet();
 
-var playNumber = function() {
-    var number = getNumber();
+    $('.numbers-list').on('click', '.numbers-list__item', function(e){
+        var number = $(e.currentTarget).attr('data-value');
+        playNumber(number);
+    });
+
+    var html = [];
+    for (var i = 0; i < numbers.length; i++) {
+        html.push('<li class="numbers-list__item" data-value="' + numbers[i] + '">' + numbers[i] + '</li>');
+    }
+
+    $('.numbers-list').html(html.join(''));
+});
+
+
+
+var playNumber = function(number) {
+    number = number || getNumber();
     playAudio("http://translate.google.com/translate_tts?tl=fi&q=" + number);
     $('.log').text(number);
 }
