@@ -10,6 +10,7 @@ input, textarea, [contenteditable] * {
 body {
     font: 0/0 a;
     text-align: center;
+    margin: 10px;
 }
 
 .content-padded {
@@ -42,19 +43,24 @@ body {
 {
     padding: 10px;
     margin: 15px 10px;
-    background: yellow;
     font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    font-family: Verdana;
+    font-size: 36px;
+    line-height: 1.25em;
+    font-family: "ChalkboardSE-Bold";
+    background: -webkit-linear-gradient(#999, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .again
 {
-    background: pink;
+    border: 0;
     font-weight: 700;
-    font-size: 24px;
-    font-family: Verdana;
+    font-size: 36px;
+    font-family: "ChalkboardSE-Bold";
+    background: -webkit-linear-gradient(red, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding: 5px;
 }
 
